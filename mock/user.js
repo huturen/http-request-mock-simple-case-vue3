@@ -1,14 +1,16 @@
 /**
  * @url https://jsonplaceholder.typicode.com/users/1
  * @header content-type: application/json
- * @delay 10
- * @header abc: xyz-12345
+ * @delay 0
+ * @header abc: 12345
  * @header flag: yes
- * @method get
+ * @method any
  */
 import faker from "http-request-mock/plugin/faker.esm.mjs";
+
 export default (request) => {
-  void [faker, request];
+  request.method === "POST" && console.log(request.body);
+
   return {
     name: faker.name(),
     email: faker.email(),

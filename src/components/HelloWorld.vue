@@ -1,13 +1,13 @@
 <script setup>
 import { ref, reactive } from "vue";
 import axios from "axios";
+window.axios = axios; // for debugging
 
 const profile = reactive({});
 const headers = reactive({});
 const refresh = ref("refresh");
 
 const api = "https://jsonplaceholder.typicode.com/users/1"; // mock it
-
 const load = () => {
   refresh.value = "loading";
   axios.get(api).then((res) => {
@@ -64,7 +64,7 @@ pre {
 .greetings {
   border: 1px dashed #666;
   padding: 10px;
-  width: 350px;
+  width: 360px;
   white-space: nowrap;
   border-radius: 3px;
 }
