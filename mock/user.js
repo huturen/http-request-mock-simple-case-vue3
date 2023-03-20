@@ -1,7 +1,7 @@
 /**
  * @url https://jsonplaceholder.typicode.com/users/1
  * @header content-type: application/json
- * @delay 0
+ * @delay 500
  * @header abc: 12345
  * @header flag: yes
  * @method any
